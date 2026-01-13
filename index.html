@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steve AI - Minecraft Helper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="bg-visuals">
+        <div class="floating-block block-1">⛏️</div>
+        <div class="floating-block block-2">🪵</div>
+        <div class="floating-block block-3">✨</div>
+    </div>
+
+    <div id="api-key-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-brand">
+                <div class="logo">🪓</div>
+                <div>
+                    <h2>Welcome to Steve AI</h2>
+                    <p class="muted">Your Minecraft helper — enter an API key to get started</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <label for="provider-select">Provider</label>
+                <select id="provider-select">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                </select>
+
+                <label for="api-key-input">API Key</label>
+                <input type="password" id="api-key-input" placeholder="Enter API Key" autocomplete="off" />
+                <div class="hint">Tip: Use a dedicated key for this app.</div>
+
+                <button id="submit-key" class="btn-primary">Start Chatting</button>
+            </div>
+        </div>
+    </div>
+
+    <main id="chat-container" class="hidden">
+        <header class="chat-header">
+            <div class="brand">
+                <div class="avatar">🧱</div>
+                <div class="title">Steve AI <span class="subtitle">— Minecraft Companion</span></div>
+            </div>
+            <div class="header-actions">
+                <div class="provider-badge" id="provider-badge">Provider: <span id="provider-name">—</span></div>
+            </div>
+        </header>
+
+        <section id="chat-messages" class="chat-messages" aria-live="polite"></section>
+
+        <div id="quick-replies" class="quick-replies"></div>
+
+        <footer id="input-area">
+            <div class="emoji-bar" id="emoji-bar">
+                <button class="emoji-btn">😄</button>
+                <button class="emoji-btn">🔥</button>
+                <button class="emoji-btn">⛏️</button>
+                <button class="emoji-btn">❤️</button>
+            </div>
+            <div class="input-row">
+                <input type="text" id="message-input" placeholder="Ask me about Minecraft... (try: 'best redstone elevator')" autofocus />
+                <button id="send-button" class="send-btn" aria-label="Send">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 21L23 12L2 3v7l15 2-15 2v7z" fill="white"/></svg>
+                </button>
+            </div>
+        </footer>
+    </main>
+
+    <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
